@@ -27,6 +27,9 @@ struct ContentView: View {
                 Task { try? await viewModel.fetchTopStories() }
             }
         }
+        .refreshable {
+            Task {try? await viewModel.fetchTopStories()}
+        }
     }
 }
 

@@ -28,7 +28,7 @@ struct News: View {
                 Label(commentCount.formatted(), systemImage: "ellipses.bubble")
                     .foregroundStyle(.orange)
                     .padding(.leading, 72)
-                Label(date.formatted(date: .numeric, time: .omitted), systemImage: "clock")
+                Label(date.formatted(date: .numeric, time: .omitted), systemImage: "calendar.circle")
                     .foregroundStyle(.brown)
                     .padding(.leading, 144)
 
