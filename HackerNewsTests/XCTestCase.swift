@@ -14,7 +14,7 @@ extension XCTestCase {
         file: StaticString = #file,
         line: UInt = #line) throws -> ModelType {
         let url = try XCTUnwrap(
-            Bundle.main.url(forResource: "Story", withExtension: "json"),
+            Bundle.main.url(forResource: name, withExtension: "json"),
             file: file,
             line: line)
         let data = try Data(contentsOf: url)
