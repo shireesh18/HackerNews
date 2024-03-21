@@ -10,27 +10,28 @@ import XCTest
 
 final class HackerNewsTests: XCTestCase {
 
-    override func setUpWithError() throws {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+    func testStoryDecoding() throws {
+        let story: Story = try openJsonFile(named: "Story")!
+        try verifyStandardFields(in: story)
     }
 
-    override func tearDownWithError() throws {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
-    }
-
-    func testExample() throws {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-        // Any test you write for XCTest can be annotated as throws and async.
-        // Mark your test throws to produce an unexpected failure when your test encounters an uncaught error.
-        // Mark your test async to allow awaiting for asynchronous code to complete. Check the results with assertions afterwards.
-    }
-
-    func testPerformanceExample() throws {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
-        }
-    }
 
 }
+
+private extension HackerNewsTests {
+    func verifyStandardFields(in story: Story,
+                              file: StaticString = #file,
+                              line: UInt = #line) throws {
+        XCTAssertEqual(story.id, 39737281)
+        XCTAssertEqual(story.author, "pierre")
+        XCTAssertEqual(story.commentCount, 417)
+        XCTAssertEqual(story.score, 1156)
+        XCTAssertEqual(story.date, Date(timeIntervalSince1970: 1710704017))
+        XCTAssertEqual(story.title, "Grok")
+        XCTAssertEqual(story.url.absoluteString, "https://github.com/xai-org/grok")
+    }
+}
+
+
+
+//url: "https://github.com/xai-org/grok"
