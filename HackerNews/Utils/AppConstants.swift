@@ -11,5 +11,5 @@ final class AppConstants {
     static let base_url = "https://hacker-news.firebaseio.com/v0"
     static let _topStoriesEndpoint = "/beststories.json"
     static var _storyEndpoint = "/item/"
-    static var storyLimit = 10
+    static var storyLimit = 5
 }

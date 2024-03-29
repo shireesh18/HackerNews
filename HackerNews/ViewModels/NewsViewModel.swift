@@ -11,7 +11,7 @@ import Foundation
 @Observable
 class NewsViewModel{
 
-    private (set) var stories: [Story] = []
+    var stories: [Story] = []
 
     func fetchTopStories() async throws {
         let url = URL(string: AppConstants.base_url+AppConstants._topStoriesEndpoint)!
